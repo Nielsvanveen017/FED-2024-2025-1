@@ -58,10 +58,10 @@
 /* CUSTOM PROPERTIES */
 /*********************/
 :root {
-	/* startje */
-	--color-text-dark:#fff;
-	--color-background-dark:#000000;
-    --dark-color-text:#ffffff;
+	/* Donker thema */
+    --dark-mode-text: #ffffff;
+    --dark-mode-background-color: #372E1E;
+    --dark-mode-nav-color: #000000; 
 }
 
 
@@ -72,7 +72,7 @@
 
 /* Algemene stijl */
 body{
-    background-color: #372E1E;
+    background-color: var(--dark-mode-background-color);
     margin-bottom: 32px;
 }
 
@@ -81,7 +81,7 @@ h1{
     font-size: 40px;
     font-weight: 500;
     letter-spacing: 0.05rem;
-    color: var(--dark-color-text);
+    color: var(--dark-mode-text);
 }
 
 h2{
@@ -89,13 +89,13 @@ h2{
     font-size: 32px;   
     text-align: center;
     font-weight: 500;
-    color: var(--dark-color-text);
+    color: var(--dark-mode-text);
 }
 
 h3{
     font-family: 'Europa', sans-serif;
     font-size: 2rem;
-    color: var(--dark-color-text);
+    color: var(--dark-mode-text);
 }
 
 h4{
@@ -105,7 +105,7 @@ h4{
 
 p{
     font-family: 'Europa', sans-serif;
-    color: var(--dark-color-text);
+    color: var(--dark-mode-text);
 }
 
 a{
@@ -124,7 +124,7 @@ header{
 }
 
 nav{
-    background-color: #000000;
+    background-color: var(--dark-mode-nav-color);
     min-height: 70px;
     display: flex;
     justify-content: space-between;
@@ -140,7 +140,7 @@ li{
 }
 
 a{
-    color: #fff;
+    color: var(--dark-mode-text);
     text-decoration: none;
 }
 
@@ -233,7 +233,7 @@ nav ul li a{
     }
 
 .knop{
-    background-color: #000000;
+    background-color: var(--dark-mode-nav-color);
 }
 
 
@@ -265,7 +265,7 @@ footer ul{
     font-family: 'Europa', sans-serif; 
     list-style-type: none;
     padding: 16px;
-    color: var(--color-text-dark);
+    color: var(--dark-mode-text);
 }
 
 footer ul li{
@@ -317,7 +317,7 @@ footer ul img{
 
 .hero-section p{
     font-weight: 200;
-    color: var(--dark-color-text);
+    color: var(--dark-mode-text);
     font-size: 16px;
     text-align: center;
     margin: 8px 0 16px 0;  
@@ -325,7 +325,7 @@ footer ul img{
 }
 
 .hero-section a{
-    color: var(--dark-color-text);
+    color: var(--dark-mode-text);
     padding: 6px 16px;
     border-radius: 100px;
     border: solid 1px;
@@ -348,17 +348,75 @@ article {
     display: flex;
     flex-direction: column;
     gap: 24px;
-    background-color:#372E1E;
+    background-color:var(--dark-mode-background-color);
 }
 
 article h1{
     margin: 2em 0 0.7em 0;
 }
 
+.slider-container{
+    padding: 2em 0 2em 1em;
+}
+
+.slider-container ul {
+    display: flex;
+    overflow-x: scroll;
+    gap: 1em;
+    padding-bottom: 1em;
+}
+
+.slider-container ul li  {
+    flex: 0 0 90%; /* Elke kaart neemt 80% van de breedte in */
+    background-color: var(--dark-mode-nav-color);
+    border-radius: 1em;
+    scroll-snap-align: start; /* Kaarten snappen naar het begin bij scrollen */
+    transition: transform 0.3s ease;
+}
+
+.slider-container ul li:last-child{
+    margin-right: 1em;
+}
+
+.slider-container ul li img {
+    width: 100%;
+    border-radius: 1em 1em 0 0;
+    object-fit: cover;
+}
+
+.slider-container ul li section{
+    margin: -30px 24px 24px 24px;
+}
+.slider-container ul li section h3{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 5px 0 12px 0;
+    font-size: 20px;
+    letter-spacing: .08rem;
+    font-weight: 400;
+}
+.event-info{
+    display: flex;
+    gap: 0.7em;
+    font-weight: 300;
+    margin-bottom: 6px;
+    font-size: 14px;
+    align-items: center;
+}
+
+.event-info svg{
+    width: 28px;
+    height: 28px;
+}
+
+/*********************/
+/* Highlights & News */
+/*********************/
 .event-card{
     display: flex;
     flex-direction: column;
-    background-color:#000000;
+    background-color:var(--dark-mode-nav-color);
     color: #fff;
     border-radius: 1em;
     height: 100%;
@@ -369,14 +427,8 @@ article h1{
     border-radius: 1em 1em 0 0 ;
 }
 
-.event-info-thumdail-large{
+.event-card img{
     height: 30vh;
-    width: auto;
-    object-fit: cover;
-}
-
-.event-info-thumdail-medium{
-    height: 20vh;
     width: auto;
     object-fit: cover;
 }
@@ -426,7 +478,6 @@ article h1{
     gap:12px;
 }
 
-
 .event-card div:last-child a{
     padding: 6px 16px;
     border-radius: 100px;
@@ -440,66 +491,6 @@ article h1{
     border-radius: 100px;
     border: solid 1px;
     text-align: center;
-    color: var(--dark-color-text);
+    color: var(--dark-mode-text);
     text-decoration: none;
 }
-
-/*********************/
-/* Slider */
-/*********************/
-.slider-container{
-    padding: 2em 0 2em 1em;
-}
-
-.slider-container ul {
-    display: flex;
-    overflow-x: scroll;
-    gap: 1em;
-    padding-bottom: 1em;
-}
-
-.slider-container ul li  {
-    flex: 0 0 90%; /* Elke kaart neemt 80% van de breedte in */
-    background-color: #000;
-    border-radius: 1em;
-    scroll-snap-align: start; /* Kaarten snappen naar het begin bij scrollen */
-    transition: transform 0.3s ease;
-}
-
-.slider-container ul li:last-child{
-    margin-right: 1em;
-}
-
-.slider-container ul li img {
-    width: 100%;
-    border-radius: 1em 1em 0 0;
-    object-fit: cover;
-}
-
-.slider-container ul li section{
-    margin: -50px 24px 24px 24px;
-}
-.slider-container ul li section h3{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    margin: 5px 0 12px 0;
-    font-size: 20px;
-    letter-spacing: .08rem;
-    font-weight: 400;
-}
-.event-info{
-    display: flex;
-    gap: 0.7em;
-    font-weight: 300;
-    margin-bottom: 6px;
-    font-size: 14px;
-    align-items: center;
-}
-
-.event-info svg{
-    width: 28px;
-    height: 28px;
-}
-
- 

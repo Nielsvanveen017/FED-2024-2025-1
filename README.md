@@ -301,7 +301,10 @@ To Do lijst voor week 4:
   <summary>uitwerken voor 3<sup>e</sup> voortgang</summary>
 
   ### Stand van zaken
-  hier dit ging goed & dit was lastig (neem ook screenshots op van delen van je website en code)
+  Tijdens het gesprek van afgelopen vrijdag heb ik gevraagd of de studenten assistent mij wilde helpen met het begrijpen en verbeteren van m'n card slider. Ik begrijp daarom nu hoe de card slider werkt. Ook heb ik deze verbeterd door het aantal gebruikte classes te verminderen. Ik heb deze vandaag afgemaakt voordat de les begon. Ook heb ik opnieuw een nieuwe repository aan moeten maken, omdat ik weer dezelfde foutmelding krijg op Github desktop. Deze melding heb ik eerder gehad. 
+
+  Vandaag ga ik proberen om met variabele te gaan werken zodat ik verschillende thema's in kan stellen. Ook wil ik de groote van het lettertype kunnen veranderen.
+  
 
 
   ### Agenda voor meeting
