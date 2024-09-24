@@ -443,3 +443,63 @@ article h1{
     color: var(--dark-color-text);
     text-decoration: none;
 }
+
+/*********************/
+/* Slider */
+/*********************/
+.slider-container{
+    padding: 2em 0 2em 1em;
+}
+
+.slider-container ul {
+    display: flex;
+    overflow-x: scroll;
+    gap: 1em;
+    padding-bottom: 1em;
+}
+
+.slider-container ul li  {
+    flex: 0 0 90%; /* Elke kaart neemt 80% van de breedte in */
+    background-color: #000;
+    border-radius: 1em;
+    scroll-snap-align: start; /* Kaarten snappen naar het begin bij scrollen */
+    transition: transform 0.3s ease;
+}
+
+.slider-container ul li:last-child{
+    margin-right: 1em;
+}
+
+.slider-container ul li img {
+    width: 100%;
+    border-radius: 1em 1em 0 0;
+    object-fit: cover;
+}
+
+.slider-container ul li section{
+    margin: -50px 24px 24px 24px;
+}
+.slider-container ul li section h3{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 5px 0 12px 0;
+    font-size: 20px;
+    letter-spacing: .08rem;
+    font-weight: 400;
+}
+.event-info{
+    display: flex;
+    gap: 0.7em;
+    font-weight: 300;
+    margin-bottom: 6px;
+    font-size: 14px;
+    align-items: center;
+}
+
+.event-info svg{
+    width: 28px;
+    height: 28px;
+}
+
+ 
