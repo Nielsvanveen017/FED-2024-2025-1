@@ -1,0 +1,445 @@
+/**************/
+/* CSS REMEDY */
+/**************/
+
+/**************/
+/* Lettertypes importeren */
+/**************/
+
+/* Normaal 400 */
+@font-face {
+    font-family: 'Europa';
+    src: url('fonts/europa-regular.woff2') format('woff2'),
+         url('fonts/europa-regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Cursief 400 */
+@font-face {
+    font-family: 'Europa';
+    src: url('fonts/europa-italic.woff2') format('woff2'),
+         url('fonts/europa-italic.woff') format('woff');
+    font-weight: 400;
+    font-style: italic;
+}
+
+/* Vet 700 */
+@font-face {
+    font-family: 'Europa';
+    src: url('fonts/europa-bold.woff2') format('woff2'),
+         url('fonts/europa-bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+/* Vet cursief 700 */
+@font-face {
+    font-family: 'Europa';
+    src: url('fonts/europa-bolditalic.woff2') format('woff2'),
+         url('fonts/europa-bolditalic.woff') format('woff');
+    font-weight: 700;
+    font-style: italic;
+}
+
+
+*, *::after, *::before {
+  box-sizing:border-box;  
+  padding:0;
+  margin:0;
+  box-sizing: border-box;
+  
+}
+
+
+
+
+/*********************/
+/* CUSTOM PROPERTIES */
+/*********************/
+:root {
+	/* startje */
+	--color-text-dark:#fff;
+	--color-background-dark:#000000;
+    --dark-color-text:#ffffff;
+}
+
+
+
+/****************/
+/* JOUW STYLING */
+/****************/
+
+/* Algemene stijl */
+body{
+    background-color: #372E1E;
+    margin-bottom: 32px;
+}
+
+h1{
+    font-family: 'Europa', sans-serif;
+    font-size: 40px;
+    font-weight: 500;
+    letter-spacing: 0.05rem;
+    color: var(--dark-color-text);
+}
+
+h2{
+    font-family: 'Europa', sans-serif;
+    font-size: 32px;   
+    text-align: center;
+    font-weight: 500;
+    color: var(--dark-color-text);
+}
+
+h3{
+    font-family: 'Europa', sans-serif;
+    font-size: 2rem;
+    color: var(--dark-color-text);
+}
+
+h4{
+    font-family: 'Europa', sans-serif;
+    font-size: 20px;
+}
+
+p{
+    font-family: 'Europa', sans-serif;
+    color: var(--dark-color-text);
+}
+
+a{
+    font-family: 'Europa', sans-serif; 
+}
+
+
+
+
+/*********************/
+/* Navigatie balk */
+/*********************/
+header{
+    position: sticky;
+    top: 0;
+}
+
+nav{
+    background-color: #000000;
+    min-height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+    top: 0;
+    width: 100%;
+    position: fixed; /* Anders zie je witruimte als je helemaal omhoog of naar beneden scrollt */
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+nav a img{
+    height: 32px;
+    width: 32px;
+}
+
+nav ul li img{
+    height: 14px;
+    width: 12px;
+    transform: rotate(-90deg);
+}
+
+nav ul li a{
+    padding: 16px;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: 0.3s ease;
+    text-transform: uppercase;
+}
+
+
+
+
+
+/*********************/
+/* Hamburger menu */
+/*********************/
+.hamburger{
+    display: none;
+    cursor: pointer;
+}
+
+
+.nav-menu{
+    display: flex;
+    gap: 60px;
+    padding: 0 8px;
+    height: 100dvh;
+    position: fixed;
+}
+
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff;
+}
+
+/* Bron: https://codepen.io/miguelznunez/pen/GRmLxPQ, https://codepen.io/shooft/pen/VwJXNEg*/
+@media(max-width: 768px){
+    .hamburger{
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-last-child(2){
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-last-child(3){
+       transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-last-child(1){
+        transform: translateY(-8px) rotate(-45deg);
+     }
+
+     .nav-menu{
+        position: fixed;
+        top: -100%;
+        left: 0;
+        gap: 0;
+        flex-direction: column;
+        backdrop-filter: brightness(60%) blur(16px);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+     }
+
+
+    
+     .nav-menu.active{
+        top: 70px;
+     }
+    }
+
+.knop{
+    background-color: #000000;
+}
+
+
+
+
+
+/*********************/
+/* Footer */
+/*********************/
+footer{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 64px 20px 0px;
+}
+footer section{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+    
+footer section img{
+    width: 100px;
+}
+footer ul{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Europa', sans-serif; 
+    list-style-type: none;
+    padding: 16px;
+    color: var(--color-text-dark);
+}
+
+footer ul li{
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0 12px 0;
+    border-top: .5px solid rgba(255, 255, 255, 0.5);
+    font-size: 14px;
+}
+footer ul img{
+    height:12px;
+    width: 12px;;
+}
+
+
+
+
+/*********************/
+/* Hero section */
+/*********************/
+.hero-section{
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    margin-bottom: 16px;
+    padding: 16px;
+    margin-top: 120px;
+}
+
+.hero-section img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80%;
+    object-fit: cover; /* Zorg ervoor dat de afbeelding goed past */
+    z-index: -1; /* Zet de afbeelding achter de tekst */
+}
+
+.hero-section h1{
+    font-size: 34px;
+    text-align: center;
+    width: 100%;
+    margin: 10px 0;
+    font-weight: 600;
+}
+
+.hero-section p{
+    font-weight: 200;
+    color: var(--dark-color-text);
+    font-size: 16px;
+    text-align: center;
+    margin: 8px 0 16px 0;  
+    line-height: 1.8rem 
+}
+
+.hero-section a{
+    color: var(--dark-color-text);
+    padding: 6px 16px;
+    border-radius: 100px;
+    border: solid 1px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.hero-section h2{
+    margin-bottom: 0.7em;
+}
+
+
+
+
+/*********************/
+/* Upcoming festival & Events */
+/*********************/
+article {
+    padding: 2em 1em 2em 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    background-color:#372E1E;
+}
+
+article h1{
+    margin: 2em 0 0.7em 0;
+}
+
+.event-card{
+    display: flex;
+    flex-direction: column;
+    background-color:#000000;
+    color: #fff;
+    border-radius: 1em;
+    height: 100%;
+}
+
+.event-card img{
+    width: 100%; /*Anders loopt de afbeelding uit de container*/
+    border-radius: 1em 1em 0 0 ;
+}
+
+.event-info-thumdail-large{
+    height: 30vh;
+    width: auto;
+    object-fit: cover;
+}
+
+.event-info-thumdail-medium{
+    height: 20vh;
+    width: auto;
+    object-fit: cover;
+}
+
+.event-card section{
+    margin: -50px 24px 24px 24px;
+}
+
+.event-card section h3{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 5px 0 12px 0;
+    font-size: 20px;
+    letter-spacing: .08rem;
+    font-weight: 400;
+}
+
+.event-card h4{
+    margin: 5px 0 5px 0;
+    font-weight: 500;
+}
+
+.event-card p{
+    font-weight: 50;
+    font-size: 14px;
+    line-height: 1.2;
+}
+
+.event-info{
+    display: flex;
+    gap: 0.7em;
+    font-weight: 300;
+    margin-bottom: 6px;
+    font-size: 14px;
+    align-items: center;
+}
+
+.event-info svg{
+    width: 28px;
+    height: 28px;
+}
+
+.event-card div:last-child{
+    display: flex;
+    margin-top: 16px;
+    gap:12px;
+}
+
+
+.event-card div:last-child a{
+    padding: 6px 16px;
+    border-radius: 100px;
+    border: solid 1px;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.large-button{
+    padding: 8px 16px;
+    border-radius: 100px;
+    border: solid 1px;
+    text-align: center;
+    color: var(--dark-color-text);
+    text-decoration: none;
+}

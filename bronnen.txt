@@ -1,0 +1,13 @@
+Hulp bij opdracht en schrijven van code
+https://chatgpt.com/ en slides DLO 
+
+Afbeeldingen
+https://www.tomorrowland.com/home/
+
+Navigatie menu met in- en uitklappen
+https://codepen.io/miguelznunez/pen/GRmLxPQ, https://codepen.io/shooft/pen/VwJXNEg*/
+
+Carousel
+https://css-tricks.com/css-only-carousel/ 
+https://chatgpt.com -> promt: Ik will de event cards also carousel tonen waarbij er 1 event card wordt getoond en van de andere been klein stukje aan de rechterkant. hoe doe ik dit met HTML css
+
